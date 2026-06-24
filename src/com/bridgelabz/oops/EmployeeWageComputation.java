@@ -6,33 +6,38 @@ public class EmployeeWageComputation {
 
 		System.out.println("Welcome to Employee Wage Computation Program");
 
+		final int IS_PART_TIME = 1;
+		final int IS_FULL_TIME = 2;
+
 		int empRatePerHour = 20;
-		int empHours = 0;
+		int totalWorkingDays = 20;
+		int totalEmpHours = 0;
 
-		// 0 = Absent
-		// 1 = Part Time
-		// 2 = Full Time
-		int empCheck = (int)(Math.random() * 3);
+		for (int day = 1; day <= totalWorkingDays; day++) {
 
-		switch(empCheck) {
+			int empHours = 0;
 
-		case 1:
-			empHours = 4;
-			System.out.println("Employee is Part Time");
-			break;
+			int empCheck = (int) (Math.random() * 3);
 
-		case 2:
-			empHours = 8;
-			System.out.println("Employee is Full Time");
-			break;
+			switch (empCheck) {
 
-		default:
-			empHours = 0;
-			System.out.println("Employee is Absent");
+			case IS_PART_TIME:
+				empHours = 4;
+				break;
+
+			case IS_FULL_TIME:
+				empHours = 8;
+				break;
+
+			default:
+				empHours = 0;
+			}
+
+			totalEmpHours += empHours;
 		}
 
-		int empWage = empHours * empRatePerHour;
+		int monthlyWage = totalEmpHours * empRatePerHour;
 
-		System.out.println("Daily Wage = " + empWage);
+		System.out.println("Monthly Employee Wage = " + monthlyWage);
 	}
 }
