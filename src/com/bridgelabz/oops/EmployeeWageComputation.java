@@ -2,16 +2,15 @@ package com.bridgelabz.oops;
 
 public class EmployeeWageComputation {
 
-	public static void main(String[] args) {
+	static final int IS_PART_TIME = 1;
+	static final int IS_FULL_TIME = 2;
 
-		System.out.println("Welcome to Employee Wage Computation Program");
+	static final int EMP_RATE_PER_HOUR = 20;
+	static final int MAX_WORKING_DAYS = 20;
+	static final int MAX_WORKING_HOURS = 100;
 
-		final int IS_PART_TIME = 1;
-		final int IS_FULL_TIME = 2;
-
-		final int EMP_RATE_PER_HOUR = 20;
-		final int MAX_WORKING_DAYS = 20;
-		final int MAX_WORKING_HOURS = 100;
+	// Method to calculate employee wage
+	public static int computeEmployeeWage() {
 
 		int totalEmpHours = 0;
 		int totalWorkingDays = 0;
@@ -40,12 +39,16 @@ public class EmployeeWageComputation {
 			}
 
 			totalEmpHours += empHours;
-
-			System.out.println("Day " + totalWorkingDays
-					+ " Employee Hours = " + empHours);
 		}
 
-		int totalWage = totalEmpHours * EMP_RATE_PER_HOUR;
+		return totalEmpHours * EMP_RATE_PER_HOUR;
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println("Welcome to Employee Wage Computation Program");
+
+		int totalWage = computeEmployeeWage();
 
 		System.out.println("Total Employee Wage = " + totalWage);
 	}
