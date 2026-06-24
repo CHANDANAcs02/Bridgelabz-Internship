@@ -9,11 +9,17 @@ public class EmployeeWageComputation {
 		final int IS_PART_TIME = 1;
 		final int IS_FULL_TIME = 2;
 
-		int empRatePerHour = 20;
-		int totalWorkingDays = 20;
-		int totalEmpHours = 0;
+		final int EMP_RATE_PER_HOUR = 20;
+		final int MAX_WORKING_DAYS = 20;
+		final int MAX_WORKING_HOURS = 100;
 
-		for (int day = 1; day <= totalWorkingDays; day++) {
+		int totalEmpHours = 0;
+		int totalWorkingDays = 0;
+
+		while (totalEmpHours <= MAX_WORKING_HOURS
+				&& totalWorkingDays < MAX_WORKING_DAYS) {
+
+			totalWorkingDays++;
 
 			int empHours = 0;
 
@@ -34,10 +40,13 @@ public class EmployeeWageComputation {
 			}
 
 			totalEmpHours += empHours;
+
+			System.out.println("Day " + totalWorkingDays
+					+ " Employee Hours = " + empHours);
 		}
 
-		int monthlyWage = totalEmpHours * empRatePerHour;
+		int totalWage = totalEmpHours * EMP_RATE_PER_HOUR;
 
-		System.out.println("Monthly Employee Wage = " + monthlyWage);
+		System.out.println("Total Employee Wage = " + totalWage);
 	}
 }
