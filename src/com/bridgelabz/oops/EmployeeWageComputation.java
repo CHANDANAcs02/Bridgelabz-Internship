@@ -7,21 +7,31 @@ public class EmployeeWageComputation {
 		System.out.println("Welcome to Employee Wage Computation Program");
 
 		int empRatePerHour = 20;
-		int fullDayHours = 8;
+		int empHours = 0;
 
-		int isPresent = (int)(Math.random() * 2);
+		// 0 = Absent
+		// 1 = Part Time
+		// 2 = Full Time
+		int empCheck = (int)(Math.random() * 3);
 
-		if (isPresent == 1) {
+		if (empCheck == 1) {
 
-			int dailyWage = empRatePerHour * fullDayHours;
+			empHours = 4;
+			System.out.println("Employee is Part Time");
 
-			System.out.println("Employee is Present");
-			System.out.println("Daily Wage = " + dailyWage);
+		} else if (empCheck == 2) {
+
+			empHours = 8;
+			System.out.println("Employee is Full Time");
 
 		} else {
 
+			empHours = 0;
 			System.out.println("Employee is Absent");
-			System.out.println("Daily Wage = 0");
 		}
+
+		int empWage = empHours * empRatePerHour;
+
+		System.out.println("Daily Wage = " + empWage);
 	}
 }
