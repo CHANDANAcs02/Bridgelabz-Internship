@@ -124,4 +124,25 @@ public class LinkedList<T> {
 		// Remove last node
 		temp.next = null;
 	}
+	// Method to search a node by value
+	public Node<T> search(T key) {
+
+		// Start from head node
+		Node<T> temp = head;
+
+		// Traverse the Linked List
+		while (temp != null) {
+
+			// Compare data with key
+			if (temp.data.equals(key)) {
+
+				return temp;
+			}
+
+			temp = temp.next;
+		}
+
+		// Return null if node is not found
+		return null;
+	}
 }
