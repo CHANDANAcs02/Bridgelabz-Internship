@@ -1,13 +1,23 @@
 package com.bridgelabz.datastructures;
 
 /*
- * LinkedList class to create
- * a simple Linked List.
+ * LinkedList class to perform
+ * basic Linked List operations.
  */
 public class LinkedList<T> {
 
 	// Head node
 	Node<T> head;
+
+	// Method to add node at beginning
+	public void add(T data) {
+
+		Node<T> newNode = new Node<>(data);
+
+		newNode.next = head;
+
+		head = newNode;
+	}
 
 	// Method to display Linked List
 	public void display() {
