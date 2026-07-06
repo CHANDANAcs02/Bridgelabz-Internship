@@ -95,4 +95,33 @@ public class LinkedList<T> {
 		// Move head to next node
 		head = head.next;
 	}
+	
+	// Method to delete the last node
+	public void popLast() {
+
+		// Check if Linked List is empty
+		if (head == null) {
+
+			System.out.println("Linked List is empty.");
+			return;
+		}
+
+		// If only one node is present
+		if (head.next == null) {
+
+			head = null;
+			return;
+		}
+
+		// Traverse to second last node
+		Node<T> temp = head;
+
+		while (temp.next.next != null) {
+
+			temp = temp.next;
+		}
+
+		// Remove last node
+		temp.next = null;
+	}
 }
