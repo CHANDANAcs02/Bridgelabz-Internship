@@ -193,4 +193,19 @@ public class LinkedList<T> {
 
 		return count;
 	}
+	// Return first element
+	public T peek() {
+
+		if (head == null) {
+			return null;
+		}
+
+		return head.data;
+	}
+
+	// Check if Linked List is empty
+	public boolean isEmpty() {
+
+		return head == null;
+	}
 }
