@@ -62,4 +62,23 @@ public class LinkedList<T> {
 		// Connect last node to new node
 		temp.next = newNode;
 	}
+	// Method to insert a node after a given node
+	public void insert(Node<T> previousNode, T data) {
+
+		// Check if previous node exists
+		if (previousNode == null) {
+
+			System.out.println("Previous node cannot be null.");
+			return;
+		}
+
+		// Create new node
+		Node<T> newNode = new Node<>(data);
+
+		// Link new node to next node
+		newNode.next = previousNode.next;
+
+		// Link previous node to new node
+		previousNode.next = newNode;
+	}
 }
