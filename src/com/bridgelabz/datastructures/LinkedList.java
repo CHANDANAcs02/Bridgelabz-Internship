@@ -81,4 +81,18 @@ public class LinkedList<T> {
 		// Link previous node to new node
 		previousNode.next = newNode;
 	}
+	
+	// Method to delete the first node
+	public void pop() {
+
+		// Check if Linked List is empty
+		if (head == null) {
+
+			System.out.println("Linked List is empty.");
+			return;
+		}
+
+		// Move head to next node
+		head = head.next;
+	}
 }
