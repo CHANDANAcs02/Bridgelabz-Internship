@@ -38,4 +38,28 @@ public class LinkedList<T> {
 
 		System.out.println();
 	}
+	// Method to append node at the end
+	public void append(T data) {
+
+		// Create new node
+		Node<T> newNode = new Node<>(data);
+
+		// If Linked List is empty
+		if (head == null) {
+
+			head = newNode;
+			return;
+		}
+
+		// Traverse till last node
+		Node<T> temp = head;
+
+		while (temp.next != null) {
+
+			temp = temp.next;
+		}
+
+		// Connect last node to new node
+		temp.next = newNode;
+	}
 }
