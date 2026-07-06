@@ -87,4 +87,33 @@ public class MyHashTable<K, V> {
 			}
 		}
 	}
+	// Remove a key from Hash Table
+	public void remove(K key) {
+
+		int index = getIndex(key);
+
+		MyMapNode<K, V> current = table[index];
+		MyMapNode<K, V> previous = null;
+
+		while (current != null) {
+
+			if (current.key.equals(key)) {
+
+				if (previous == null) {
+
+					table[index] = current.next;
+				}
+
+				else {
+
+					previous.next = current.next;
+				}
+
+				return;
+			}
+
+			previous = current;
+			current = current.next;
+		}
+	}
 }
