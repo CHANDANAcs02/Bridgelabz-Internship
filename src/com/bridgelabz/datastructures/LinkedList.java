@@ -145,4 +145,52 @@ public class LinkedList<T> {
 		// Return null if node is not found
 		return null;
 	}
+	// Method to delete a node by value
+	public void delete(T key) {
+
+		// Check if Linked List is empty
+		if (head == null) {
+
+			return;
+		}
+
+		// If head node contains the key
+		if (head.data.equals(key)) {
+
+			head = head.next;
+			return;
+		}
+
+		// Traverse the Linked List
+		Node<T> temp = head;
+
+		while (temp.next != null) {
+
+			if (temp.next.data.equals(key)) {
+
+				temp.next = temp.next.next;
+
+				return;
+			}
+
+			temp = temp.next;
+		}
+	}
+	
+	// Method to find size of Linked List
+	public int size() {
+
+		int count = 0;
+
+		Node<T> temp = head;
+
+		while (temp != null) {
+
+			count++;
+
+			temp = temp.next;
+		}
+
+		return count;
+	}
 }
